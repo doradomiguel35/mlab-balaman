@@ -60,12 +60,22 @@ app.get('/', (req,res)=>{
 });
 
 app.get('/register', (req,res)=>{
-	const callback = (err,result) => {
-		if(err)throw err;
 		res.render('register.ejs');
-	}
 });
 
+app.post('/register'(req,res)=>{
+	const newStudent ={
+		"studentid": req.body.studentid,
+		"firstname": req.body.firstname,
+		"lastname": req.body.lastname,
+	};
+	const callback = (err, data)=>{
+		if(err)throw err;
+		res.redirect('/'); 
+	};
+
+	Students.create(newStudent,callback);
+});
 
 app.post('/students', (req, res) => {
 	const newStudent = req.body;
