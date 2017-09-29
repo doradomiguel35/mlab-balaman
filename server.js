@@ -59,6 +59,14 @@ app.get('/', (req,res)=>{
 	// res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/register', (req,res)=>{
+	const callback = (err,result) => {
+		if(err)throw err;
+		res.render('register.ejs');
+	}
+});
+
+
 app.post('/students', (req, res) => {
 	const newStudent = req.body;
 	const callback = (err, data)=>{
