@@ -31,7 +31,8 @@ const studentSchema = new mongoose.Schema({
 	lastname: 'string'
 });
 // const uri = "mongodb://username:password@host.domain.com:port/database";
-const uri = process.env.DB_URI;
+// const uri = process.env.DB_URI;
+const uri = "mongodb://test:lk09mnhg@ds147044.mlab.com:47044/doradotest";
 const options = {
 	useMongoClient: true,
 	promiseLibrary: require('bluebird'),
